@@ -1,10 +1,1 @@
-favor
-  Key.enter hahaha
- lol
- what Key.enter password
-favor
- favor
- favorfavor
-sear Key.backspace  Key.backspace  Key.backspace  Key.backspace  Key.backspace inmail Key.shift_r :
- verizon Key.enter  Key.backspace  Key.backspace  Key.backspace  Key.backspace  Key.backspace spam
- verizon Key.enter r Key.backspace  Key.backspace thats
+[This is the keylog file. All keystrokes from the targets keyboard are sent here.]

