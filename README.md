@@ -1,1 +1,1 @@
-# pythonkeylogger
+# This script is a basic keylogger that captures and records every keystroke made by the user, thens sends the keylog file remotely via an FTP server. It uses the pynput library to listen for keyboard input and the ftplib library to store the recorded keystrokes on a remote FTP server. The keystrokes are saved in a file named "keylogs.txt" and the script is designed to run in the background.
